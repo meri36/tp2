@@ -1,4 +1,4 @@
-#TP 2 SIR R�alis� par Meriem Machnache & Lydia Moussa
+#TP 2 SIR Réalisé par Meriem Machnache & Lydia Moussa
 
 Le but de ce tp est de créer une application type réseau social pour comparer 
 la consommation électrique avec ses amis, ses voisins ... dans une société américaine opower.
@@ -6,11 +6,11 @@ la consommation électrique avec ses amis, ses voisins ... dans une société am
 ## Objectifs du TP
 
 -Comprendre les mécanismes de JPA
--Réaliser une application en utilisant JPA en se plaçant dans un cadre classique de développement sans serveur d’application au départ.
+-Réaliser une application en utilisant JPA en se plaçant dans un cadre classique de développement sans serveur d'application au départ.
 
-# Présentation des règles de gestion des données
+# Présentation des régles de gestion des données
 
-Person: id,nom,prénom,mail, une ou plusieurs résidences , plusieurs devices , un ou plusieurs amis.
+Person: id,nom,prÃ©nom,mail, une ou plusieurs résidences , plusieurs devices , un ou plusieurs amis.
 Home: id,taille,nombre de pieces
 Equipement electroniques: consommation moyenne en Watt/h.
 Heater: nom chauffage,puissance
@@ -43,7 +43,7 @@ hibernate , hsqldb et mysql(driver jdbc pour hsqldb).
 	 
 ![model](https://cloud.githubusercontent.com/assets/15005875/24684497/b92f1ffe-19a6-11e7-9628-f9a097ea34e2.png)
  
-### Nous avons modifié le fichier de configuration persistence.xml pour paramétrer la base de données.
+### Nous avons modifié le fichier de configuration persistence.xml pour paramatrer la base de données.
   
  	 <properties>
          <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
@@ -71,18 +71,18 @@ Une personne peut avoir un ou plusieurs amis.
 Une personne peut avoir une ou plusieurs résidences.
 Une personne peut avoir un ou plusieurs équipements électroniques.
   
-Nous avons ajouté les annotations suivantes:
+Nous avons ajoutÃ© les annotations suivantes:
 
 @Entity : pour définir une entité
 
 @Id @GeneratedValue: Pour générer l'id automatiquement
 
-@OneToMany (mappedBy="personnes", cascade=CascadeType.PERSIST): Pour exprimer la relation une ou 		plusieurs entre l'entité personne et les autres entités residence, devices.
+@OneToMany (mappedBy="personnes", cascade=CascadeType.PERSIST): Pour exprimer la relation une ou 		plusieurs entre l'entitÃ© personne et les autres entités residence, devices.
 
  
 # La classe Home
 
-La classe Home est composée des attributs suivants:id généré automatiquemnt,nombre de pièces,taille , collection de heaters.
+La classe Home est composée des attributs suivants:id généré automatiquemnt,nombre de piéces,taille , collection de heaters.
 Une résidence peut avoir une ou plusieurs heaters. 
    
 Nous avons ajouté les annotations suivantes:
@@ -97,7 +97,7 @@ Nous avons ajouté les annotations suivantes:
 # La classe ElectronicDevice 
 
 La classe ElectronicDevice est composée des attribus suivants:
-Id et consommation , qui représente la consommation moyenne en Watt/h
+Id et consommation , qui reprÃ©sente la consommation moyenne en Watt/h
 et un attribut de type personne.
 
 Nous avons ajouté les annotations suivantes:
@@ -119,7 +119,7 @@ Nous avons ajouté les annotations suivantes:
 
 
 # La classe Device
-Cette classe représente la classe mère pour les deux classes :
+Cette classe représente la classe mére pour les deux classes :
 Heater et ElectronicDevice. public class ElectronicDevice extends Device{}
  
 # La classe de service
@@ -129,10 +129,10 @@ La classe JpaTest est composée d'un attribut de type EntityManager.
 EntityManager nous permet de faire les opérations de persistance.
 Nous avons crée une instance de la classe EntityManager . 
 
-Pour le faire, nous avons passé par la fabrique Factory qu'on récupère avec
+Pour le faire, nous avons passÃ© par la fabrique Factory qu'on récupére avec
 la méthode statique Persistence.createEntityManagerFactory() 
  
-Dans cette classe de service, nous avons immplementé les transactions afin de mettre à  jour les données, en executant les opérations CRUD: Insert,Update,Delete,..
+Dans cette classe de service, nous avons immplementé les transactions afin de mettre Ã Â  jour les données, en executant les opérations CRUD: Insert,Update,Delete,..
 
  public static void main(String[] args) {
 		
